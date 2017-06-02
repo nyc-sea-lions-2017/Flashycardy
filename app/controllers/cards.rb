@@ -1,7 +1,7 @@
 get '/decks/:deck_id/cards/:card_id' do
-  binding.pry
+  # binding.pry
   @card = Card.find(params[:card_id])
-  erb :"/card_show"
+  erb :"cards/card_show"
 end
 
 post '/cards/:id' do
