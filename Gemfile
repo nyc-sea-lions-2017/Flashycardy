@@ -3,7 +3,7 @@ ruby '~> 2.2', '>= 2.2.2'
 
 # PostgreSQL driver
 gem 'pg', '~> 0.18'
-
+gem 'pry'
 # Sinatra driver
 gem 'sinatra', '~> 1.4.8'
 gem 'sinatra-contrib'
@@ -14,6 +14,7 @@ gem 'activesupport', '~> 5.0'
 gem 'rake', '~> 12.0.0'
 
 gem 'shotgun'
+
 
 group :test do
   gem 'shoulda-matchers'
