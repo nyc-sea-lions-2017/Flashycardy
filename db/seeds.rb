@@ -5,5 +5,8 @@
   Card.create(question:question, answer:answer,deck_id:1)
 end
 
-Deck.create(deckname:'Jobs')
+Deck.create!(deckname:'Jobs')
+Deck.create!(deckname:'Chuck Norris')
+Deck.create!(deckname:'Sample')
+
 
