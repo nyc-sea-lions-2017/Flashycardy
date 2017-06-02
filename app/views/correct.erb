@@ -1,0 +1,7 @@
+<% if @card.answer == @user_answer %>
+  <h1> CORRECT!!!! </h1>
+  <a href= "/cards/<%=@card.id.to_i + 1%>">Next Question</a>
+  <% else %>
+  <h1> INCORRECT!!!!! </h1>
+  <a href= "/cards/<%=@card.id.to_i + 1%>">Next Question</a>
+<%end%>
