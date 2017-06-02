@@ -1,5 +1,6 @@
-get '/cards/:id' do
-  @card = Card.find(params[:id])
+get '/decks/:deck_id/cards/:card_id' do
+  binding.pry
+  @card = Card.find(params[:card_id])
   erb :"/card_show"
 end
 
