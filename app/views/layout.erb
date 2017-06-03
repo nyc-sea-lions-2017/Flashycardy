@@ -24,9 +24,10 @@
     <li><a href="/logout">Logout</a></li>
     <li><a href="/">home</a></li>
   <% else %>
-    <li> <a href="/login/new">Login</a></li>
-    <li> <a href="/register/new">Register</a></li>
-    <% end %>
+    <li> <a href="/login">Login</a></li>
+    <li> <a href="/users/new">Register</a></li>
+    <li><a href="/">home</a></li>
+  <% end %>
   </ul>
   <%= yield %>
 </body>

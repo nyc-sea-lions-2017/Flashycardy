@@ -4,6 +4,7 @@ ruby '~> 2.2', '>= 2.2.2'
 # PostgreSQL driver
 gem 'pg', '~> 0.18'
 gem 'pry'
+gem 'pry-byebug'
 # Sinatra driver
 gem 'sinatra', '~> 1.4.8'
 gem 'sinatra-contrib'

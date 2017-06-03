@@ -1,0 +1,8 @@
+<% if @errors %>
+	<ul>
+		<li><% @errors.each do |error| %></li>
+	  <%= error %>
+  <% end %>
+  </ul>
+<% end %>
+

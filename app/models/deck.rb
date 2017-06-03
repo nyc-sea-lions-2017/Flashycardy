@@ -8,8 +8,9 @@ class Deck < ApplicationRecord
   card_array = Card.where(deck_id: self.id)
     # binding.pry
   card_index = card_array.map{|card| card.id.to_i}
+  card_index.shuffle
   if card_index
-    index = card_index.sample
+    index = card_index.shift
   else
     'redirect'
   end

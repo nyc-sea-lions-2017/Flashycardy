@@ -1,32 +1,16 @@
-get '/register/new' do
-  erb :'/users/new'
-end
-
-post '/register' do
-  user = User.new(params[:user])
-  if user.save
-    session[:user_id] = user.id
-    erb :'/users/show'
-  else
-    status 422
-    @errors = user.errors.full_message
-    erb :'register/new'
-  end
-end
-
-get '/login/new' do
-  erb :'/sessions/login'
+get '/login' do
+  erb :"/sessions/new"
 end
 
 post '/login' do
-  binding
-   @user = User.find_by(name: params[:user][:name])
-   if @user && @user.authenticate([:password])
+  # binding.pry
+  @user = User.find_by(email: params[:user][:email])
+  if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
-    erb :'/users/show'
+    redirect '/'
   else
-    @errors = ['incorrect username or password']
-    erb :'sessions/login'
+    @errors = ["Invalid Email or Password"]
+    erb :"/sessions/new"
   end
 end
 
