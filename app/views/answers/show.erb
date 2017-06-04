@@ -1,0 +1,10 @@
+
+<% if @card.answer.to_s.downcase == @user_answer.to_s.downcase %>
+  <h1> CORRECT!!!! </h1>
+  <a href= '/decks/<%=@deck.id%>/cards/<%=@card.id + 1%>'>Next Question</a>
+  <% else %>
+  <p>The Correct answer is <%= @card.answer %></p> 
+  <h1> INCORRECT!!!!! </h1>
+  <a href= '/decks/<%=@deck.id%>/cards/<%=@card.id + 1%>'>Next Question</a>
+<%end%>
+	

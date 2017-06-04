@@ -1,16 +1,26 @@
-get '/decks/:deck_id/cards/:card_id' do
+get '/decks/:deck_id/round/:round_id/cards/:card_id' do
   # binding.pry
-  @card = Card.find(params[:card_id])
-  erb :"cards/show"
+
+  @deck = Deck.find(params[:deck_id])
+  @card = @deck.cards.find(params[:card_id])
+  erb :"/cards/show"
 end
 
-post '/decks/:deck_id/cards/:id' do
-  @card = Card.find(params[:id])
-  @user_answer = params[:answer]
-  redirect "/cards/#{@card.id}/answer"
+post '/decks/:deck_id/cards/:card_id' do
+	# binding.pry
+  @deck = Deck.find(params[:deck_id])
+  @card = @deck.cards.find(params[:card_id])
+  @user_answer = @card.guesses.create(guess: params[:user][:answer])
+  if @card
+  	erb :"/answers/show"
+  else 
+  	erb :"/completed/show"
+  end
 end
 
 get '/cards/:id/answer' do
   @card = Card.find(params[:id])
-  erb :'/correct'
+  erb :'/cards/show'
 end
+
+

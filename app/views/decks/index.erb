@@ -1,7 +1,11 @@
 <h1>Flashcard Decks</h1>
 <ul>
   <% @decks.each do |deck| %>
-  <a href="/decks/<%= deck.id %>/cards/<%=deck.random_id%>"><%= deck.deckname %></a>
-  <br>
+	  <% if logged_in %>
+	  <a href="/decks/<%= deck.id %>/cards/<%=deck.cards.first.id%>"><%= deck.deckname %></a>
+	  <% else %>
+	  	  <%= deck.deckname %></a>
+	  <% end %>
+	  <br>
   <% end %>
 </ul>

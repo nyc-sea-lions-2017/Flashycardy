@@ -1,7 +1,10 @@
+<h1>DeckName: <%= @deck.deckname %></h1> 
+<h2>question</h2>
 <%= @card.question %>
 
-<form action= '/cards/<%=@card.id%>' method = 'post'>
-  Answer:<br>
-  <input type="text" name="answer" required><br>
+
+<form action= '/decks/<%=@deck.id%>/cards/<%=@card.id%>' method = 'post'>
+  answer:<br>
+  <input type="text" name="user[answer]" required><br>
   <input type="submit" value= "Submit">
 </form>
