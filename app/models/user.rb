@@ -1,9 +1,10 @@
 class User < ApplicationRecord
-  has_secure_password
   has_many :rounds
-  validates :email, :name, uniqueness: true
+  has_many :guesses, through: :rounds
+
+	validates :email, :name, uniqueness: true
   validates :name, :email, presence: true
 
-
+  has_secure_password
 end
 

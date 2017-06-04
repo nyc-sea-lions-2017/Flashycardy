@@ -1,6 +1,7 @@
 class Deck < ApplicationRecord
+  validates :deckname, presence: true
+  
   has_many :cards
   has_many :rounds
 
-  validates :deckname, presence: true
 end

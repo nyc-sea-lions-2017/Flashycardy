@@ -1,8 +1,9 @@
 class Card < ApplicationRecord
-  belongs_to :deck
-  has_many :guesses
+  validates :deck_id, :question, :answer, presence: true
 
-  validates :deck_id, {presence: true}
+ 	belongs_to :deck
+  has_many :guesses
+  has_many :rounds, through: :guesses
 
  #  def random_id
 	#   card_array = Card.where(deck_id: self.id)
