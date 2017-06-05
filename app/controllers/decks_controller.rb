@@ -6,6 +6,7 @@ end
 
 get '/decks/:deck_id' do
   @deck = Deck.find(params[:deck_id])
+  # binding.pry
   @round = Round.create(deck_id: params[:deck_id], user_id: current_user.id)
 
   redirect "/decks/#{@deck.id}/cards/#{@deck.cards.first.id}/rounds/#{@round.id}"

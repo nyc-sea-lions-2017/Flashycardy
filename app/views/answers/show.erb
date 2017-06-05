@@ -1,4 +1,4 @@
-<% if @card.id < @deck.cards.length %>
+<% if @card.id <= @deck.cards.length %>
   <% if @card.answer.downcase == @guess.guess.downcase%>
     <h1> CORRECT!!!! </h1>
     <a href= '/decks/<%=@deck.id%>/cards/<%=@card.id + 1%>/rounds/<%=@round.id%> '>Next Question</a>
