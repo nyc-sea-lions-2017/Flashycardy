@@ -4,10 +4,12 @@ end
 
 post '/users' do
   # binding.pry
+
+  @deck = Deck.all
   @user = User.new(params[:user])
   if @user.save
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}"
+    redirect "/decks"
   else
     @errors = @user.errors.full_messages
     erb :"/users/new"

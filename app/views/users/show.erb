@@ -1,1 +1,8 @@
-<%= @user.name %>
+<%= current_user.name %>
+<% current_user.rounds.each do |round| %>
+
+  <p>round: <%= round.id %></p>
+  <p>you made <%=round.guesses.count%> guesses</p>
+  <p>this many cards per round <%=rounds.decks.cards.count%></p>
+  <p><%=round.deck.deckname%></p>
+<% end %>

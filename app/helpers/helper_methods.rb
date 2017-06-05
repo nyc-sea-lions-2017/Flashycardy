@@ -10,6 +10,10 @@ def redirect_if_no_user
   redirect "/login" unless logged_in
 end
 
+def card_count
+  self.cards.count
+end
+
 # def card_shuffler
 # 	card_array = Card.where(deck_id: self.id)
 # 	card_index = card_array.map{|card| card.id.to_i}
