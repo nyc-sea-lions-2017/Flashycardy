@@ -3,10 +3,11 @@ get '/users/new' do
 end
 
 post '/users' do
+  # binding.pry
   @user = User.new(params[:user])
   if @user.save
     session[:user_id] = @user.id
-    redirect '/users/:id'
+    redirect "/users/#{@user.id}"
   else
     @errors = @user.errors.full_messages
     erb :"/users/new"

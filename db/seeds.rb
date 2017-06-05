@@ -4,8 +4,8 @@
 
 #   Card.create(question: question, answer: answer, deck_id: 1)
 # end
-Deck.create!(deckname:'NBA players')
-Deck.cards.create(question: "Who played Jesus Shuttlesworth in the Movie 'He Got Game'?", answer: "Ray Allen", deck_id: 1)
+deck1 = Deck.create!(deckname:'NBA players')
+deck1.cards.create(question: "Who played Jesus Shuttlesworth in the Movie 'He Got Game'?", answer: "Ray Allen", deck_id: 1)
 deck1.cards.create(question: "This player scored 100 points in a single NBA game.", answer: "Wilt Chamberlain", deck_id: 1)
 deck1.cards.create(question: "Who did the Knicks draft when they were one pick away from drafting Steph Curry?.", answer: "jordan hill", deck_id: 1)
 deck2 = Deck.create!(deckname:"90's Hip Hop")

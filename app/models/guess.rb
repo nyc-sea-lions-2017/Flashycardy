@@ -3,6 +3,7 @@ class Guess < ApplicationRecord
 
   belongs_to :card
   belongs_to :round
+  has_one :user, through: :round
 
 end
 

@@ -20,13 +20,13 @@
 <body>
   <ul>
     <% if logged_in %>
-    <li> <a href="/users/<%=current_user.id %>"><%= "#{current_user.name}" %></a></li>
-    <li><a href="/logout">Logout</a></li>
-    <li><a href="/">home</a></li>
-  <% else %>
-    <li> <a href="/login">Login</a></li>
-    <li> <a href="/users/new">Register</a></li>
-    <li><a href="/">home</a></li>
+      <li> <a href="/users/<%=current_user.id %>"><%= "#{current_user.name}" %></a></li>
+      <li><a href="/logout">Logout</a></li>
+      <li><a href="/">home</a></li>
+    <% else %>
+      <li> <a href="/login">Login</a></li>
+      <li> <a href="/users/new">Register</a></li>
+      <li><a href="/">home</a></li>
   <% end %>
   </ul>
   <%= yield %>

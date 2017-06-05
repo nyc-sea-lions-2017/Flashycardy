@@ -1,9 +1,9 @@
-<h1>DeckName: <%= @deck.deckname %></h1> 
+<h1>DeckName: <%= @deck.deckname %></h1>
 <h2>question</h2>
 <%= @card.question %>
 
 
-<form action= '/decks/<%=@deck.id%>/cards/<%=@card.id%>' method = 'post'>
+<form action= '/decks/<%=@deck.id%>/cards/<%=@card.id%>/rounds/<%=@round.id%>' method = 'post'>
   answer:<br>
   <input type="text" name="user[answer]" required><br>
   <input type="submit" value= "Submit">

@@ -2,8 +2,8 @@
 <ul>
   <% @decks.each do |deck| %>
 	  <% if logged_in %>
-	 			<% if deck.rounds.first = nil
-	 				<a href="/decks/<%= deck.id %>/rounds/<%=deck.rounds%>/cards/<%=deck.cards.first.id%>"><%= deck.deckname %></a>
+
+	 				<a href="/decks/<%= deck.id %>"><%= deck.deckname %></a>
 	  <% else %>
 	  	  <%= deck.deckname %></a>
 	  <% end %>
